@@ -11,7 +11,7 @@
     "build": "tsc",
     "start": "node dist/server.js"
   },
-  "keywords": [],
+  "keywords": ["camagru", "webapp", "typescript", "nodejs", "photo-sharing", "42-project"],
   "author": "",
   "license": "ISC",
   "dependencies": {
