@@ -10,9 +10,9 @@ services:
     env_file:
       - ./.env
     volumes:
-      - .:/app
+      - ./src:/app/src
     depends_on:
-      - db
+      - database
     restart: unless-stopped
 
   database:
@@ -29,5 +29,5 @@ services:
       retries: 5
     restart: unless-stopped
 
-    volumes:
-      dbdata:
+volumes:
+  dbdata:
