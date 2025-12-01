@@ -1,7 +1,8 @@
 import http from "http";
+import { app } from "./app";
 
 const server = http.createServer((req, res) => {
-    res.end("Camagru backend running");
+    app(req, res);
 });
 
 server.listen(8080, () => {
