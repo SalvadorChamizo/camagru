@@ -1,11 +1,17 @@
 import { IncomingMessage, ServerResponse } from "http";
+import path from "path";
+import fs from "fs";
 
 export function handleAuthRoutes(req: IncomingMessage, res: ServerResponse) {
     const url = req.url;
     const method = req.method;
 
     if (url === "/signup" && method === "GET") {
-        res.end("<h1>Sign Up Page</h1>");
+        const filePath = path.join(process.cwd(), "src", "views", "signup.html");
+        const html = fs.readFileSync(filePath, "utf-8");
+
+        res.setHeader("Content-Type", "text/html");
+        res.end(html);
         return ;
     }
 
